@@ -66,6 +66,7 @@
                         }
                     });
 
+                //redireciona para a pagina principal
                 function entrar(){
                     nome = document.form.user.value;
                     window.alert("Bem Vindo(a) " + nome);
