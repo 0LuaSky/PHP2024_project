@@ -5,20 +5,26 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>login</title>
 
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+            <!--Requisitando arquivo contendo as bibliotecas do bootstrap-->
+            <?php
+                require "web_inf/bootslibs.php"
+            ?>
 
-
+            <!--Configurando front end do sistema-->
             <style>
                 .main{
-                    float: left;
+                    /*definindo a organização das caixas dentro do div como flex, permitindo que elementes fiquem lado a lado*/
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 1%;
                 } 
                 .image{
                     background-image: url("https://images3.alphacoders.com/868/868525.jpg");
-                    float: left;
+                    margin-left:3%;
                 }
-                .text{
-                    float: left;
+                .login{
+                    margin: auto;
                 }
 
 
@@ -27,11 +33,13 @@
         <body>
             
             <div class="main">
+                <!--conteiner para inserir uma imagem na pagina-->
                 <div class="image">
-                    <img src="https://images3.alphacoders.com/868/868525.jpg" alt="alternatetext"  width="500" height="600">
+                    <img src="https://images3.alphacoders.com/868/868525.jpg" alt="alternatetext"  width="860" height="720">
 
                 </div>
 
+                <!--conteiner para a area de login-->
                 <div class="login">
                     <h2 style="font-size: 50px">FIND FOOD</H2>
                     <h1>Bem vindo(a)</h1>
@@ -46,9 +54,9 @@
                         </div>
                     </form>
                 </div>
-
             </div>
 
+            <!--permite usar a tecla "enter" para confirmar o envio do form-->
             <script>
             var input = document.getElementById("myInput");
                     input.addEventListener("keypress", function(event) {
@@ -58,6 +66,7 @@
                         }
                     });
 
+                //redireciona para a pagina principal
                 function entrar(){
                     nome = document.form.user.value;
                     window.alert("Bem Vindo(a) " + nome);
