@@ -4,6 +4,17 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>placeholder</title>
+
+            <style>
+                .opt{
+                    color: #ffffff;
+                    text-shadow:-2px -2px 0 #000000, 2px -2px 0 #000000,-2px 2px 0 #000000,2px 2px 0 #000000;
+                    text-align: center; 
+                    vertical-align: middle;
+                    border-radius:30px;
+                }
+            </style>
+
         </head>
         <body>
             
@@ -59,35 +70,45 @@
                 /-->
 
                 <form>
-                    <h1 id="scrollspyHeading1">Escolha o tamanho certo para preencher seu vazio.</h1>
+                    <div class="opt" style="background-image: url('web_inf/imagem/tamanho.jpg')">
+                        <h1 id="scrollspyHeading1">Escolha o tamanho certo para preencher seu vazio.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
                 <form>
-                    <h1 id="scrollspyHeading2">Escolha o pão ideal para você.</h1>
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading2">Escolha o pão ideal para você.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
                 <form>
-                    <h1 id="scrollspyHeading3">Escolha uma proteina para dar sabor ao seu lanche.</h1>
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading3">Escolha uma proteina para dar sabor ao seu lanche.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
                 <form>
-                    <h1 id="scrollspyHeading4">Escolha algo para passar no pão para complementar essa delicia.</h1>
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading4">Escolha algo para passar no pão para complementar essa delicia.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
                 <form>
-                    <h1 id="scrollspyHeading5">Escolha um complemento que adicione mais sabor ao seu lanche.</h1>
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading5">Escolha um complemento que adicione mais sabor ao seu lanche.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
@@ -95,21 +116,27 @@
 
 
                 <form>
-                    <h1 id="scrollspyHeading6">Escolha uma salada que deixe o seu lanche ainda mais perfeito.</h1>
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading6">Escolha uma salada que deixe o seu lanche ainda mais perfeito.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
                 <form>
-                    <h1 id="scrollspyHeading7">Escolha um tempero para dar ainda mais sabor a essa perfeição.</h1>
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading7">Escolha um tempero para dar ainda mais sabor a essa perfeição.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
                 <form>
-                    <h1 id="scrollspyHeading8">Escolha um molho para finalizar o seu lanche ideal.</h1>
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading8">Escolha um molho para finalizar o seu lanche ideal.</h1>
+                    </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
