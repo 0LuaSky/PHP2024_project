@@ -20,7 +20,6 @@
                     margin-top: 1%;
                 } 
                 .image{
-                    background-image: url("https://images3.alphacoders.com/868/868525.jpg");
                     margin-left:3%;
                 }
                 .login{
