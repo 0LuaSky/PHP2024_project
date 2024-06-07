@@ -7,7 +7,7 @@
 
             <!--Requisitando arquivo contendo as bibliotecas do bootstrap-->
             <?php
-                require "web_inf/bootslibs.php"
+                require "web_inf/bootsLibs.php"
             ?>
 
             <!--Configurando front end do sistema-->
@@ -34,7 +34,7 @@
             <div class="main">
                 <!--conteiner para inserir uma imagem na pagina-->
                 <div class="image">
-                    <img src="https://images3.alphacoders.com/868/868525.jpg" alt="alternatetext"  width="860" height="720">
+                    <img src="https://images3.alphacoders.com/868/868525.jpg" alt="alternatetext"  width="860" height="720" style="border-radius:30px;">
 
                 </div>
 

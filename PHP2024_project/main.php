@@ -3,7 +3,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>placeholder</title>
+            <title>placeHolder</title>
 
             <style>
                 .opt{
@@ -13,14 +13,43 @@
                     vertical-align: middle;
                     border-radius:30px;
                 }
+                .grade{
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    font-size:30px;
+                }
+
+                .grade > .content{
+                    text-align: center;
+                    width
+                }
             </style>
 
+            <?php
+                // define as variaveis como nulas
+                $tamanho = $pao = $recheio = $proteina = $queijo = "";
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $tamanho = test_input($_POST["tamanho"]);
+                    $pao = test_input($_POST["pao"]);
+                    $recheio = test_input($_POST["recheio"]);
+                    $proteina = test_input($_POST["proteina"]);
+                    $queijo = test_input($_POST["queijo"]);
+                }
+
+                function test_input($data) {
+                    $data = trim($data);
+                    $data = stripslashes($data);
+                    $data = htmlspecialchars($data);
+                    return $data;
+                }
+            ?>
         </head>
         <body>
             
             <?php
                 //Arquivo para a barra superiora ser incluida na pagina.
-                require "web_inf/navbar.php";
+                require "web_inf/navBar.php";
             ?>
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
                 
@@ -69,80 +98,262 @@
                     com "rastredores que permitem ver onde o usuario es em sua posição na pagina.    
                 /-->
 
-                <form>
+                <form id="tamanho">
                     <div class="opt" style="background-image: url('web_inf/imagem/tamanho.jpg')">
                         <h1 id="scrollspyHeading1">Escolha o tamanho certo para preencher seu vazio.</h1>
                     </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <br><br>
+                    <div class="grade">
+                        <div class="content">                            
+                            <input class="form-check-input" type="radio" name="tamanho" id="pequeno" value="pequeno">
+                            <label class="form-check-label">Pequeno.</label>
+                            <h2>&nbsp R$ 6,99</h2>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="tamanho" id="medio" value="medio">
+                            <label class="form-check-label">Médio.&nbsp &nbsp &nbsp</label>
+                            <h2>&nbsp R$ 11,99</h2>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="tamanho" id="grande" value="grande">
+                            <label class="form-check-label">Grande. &nbsp </label>
+                            <h2>&nbsp &nbsp R$ 15,99</h2>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="tamanho" id="colossal" value="colossal">
+                            <label class="form-check-label">COLOSAL!</label>
+                            <h2>&nbsp &nbsp R$ 22,99</h2>
+                        </div>
+                    </div>
+                    <br><br>
+                    <br><br>
                     <br><br>
                 </form>
 
-                <form>
+                <form id="pao">
                     <div class="opt" style="background-image: url('')">
                         <h1 id="scrollspyHeading2">Escolha o pão ideal para você.</h1>
                     </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <br><br>
+                    <div class="grade">
+                        <div class="content">                            
+                            <input class="form-check-input" type="radio" name="pao" id="branco" value="branco">
+                            <label class="form-check-label">Pão Branco.&nbsp &nbsp</label>
+
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="pao" id="tres_queijo" value="tres_queijo">
+                            <label class="form-check-label">três queijos.&nbsp</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="pao" id="integral" value="integral">
+                            <label class="form-check-label">Integral.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="pao" id="australiano" value="australiano">
+                            <label class="form-check-label">Australiano. &nbsp</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="pao" id="brioche" value="brioche">
+                            <label class="form-check-label">Brioche.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="pao" id="batata" value="batata">
+                            <label class="form-check-label">Pão de batata.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="pao" id="vegano" value="vegano">
+                            <label class="form-check-label">Vegano.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="pao" id="sem_glutem" value="sem_glutem">
+                            <label class="form-check-label">Glutem_free. &nbsp &nbsp</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                </form>
+                
+                <form id="recheio">
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading3">Escolha algo para passar no pão para complementar essa delicia.</h1>
+                    </div>
+                    <br><br>
+                    <div class="grade">
+                        <div class="content">                            
+                            <input class="form-check-input" type="radio" name="recheio" id="manteiga" value="manteiga">
+                            <label class="form-check-label">Manteiga.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="recheio" id="requejão" value="requejão">
+                            <label class="form-check-label">Requejão.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="recheio" id="maionese" value="maionese">
+                            <label class="form-check-label">Maionese.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="recheio" id="margarina" value="margarina">
+                            <label class="form-check-label">Margarina</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="recheio" id="maionese_vegie" value="maionese_vegie">
+                            <label class="form-check-label">Maionese vegie.</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <br><br>
                     <br><br>
                 </form>
 
-                <form>
+                <form id="proteina">
                     <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading3">Escolha uma proteina para dar sabor ao seu lanche.</h1>
+                        <h1 id="scrollspyHeading4">Escolha uma proteina para dar sabor ao seu lanche.</h1>
+                    </div>
+                    <br><br>
+                    <div class="grade">
+                        <div class="content">                            
+                            <input class="form-check-input" type="radio" name="proteina" id="frango" value="frango">
+                            <label class="form-check-label">Frango.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="proteina" id="carne" value="carne">
+                            <label class="form-check-label">Carne.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="proteina" id="presunto" value="presunto">
+                            <label class="form-check-label">presunto</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="proteina" id="mortadela" value="mortadela">
+                            <label class="form-check-label">Mortadela</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="proteina" id="peito_de_peru" value="peito_de_peru">
+                            <label class="form-check-label">Peito de peru</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="proteina" id="vegano" value="vegano">
+                            <label class="form-check-label">Vegano.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="proteina" id="bacom" value="bacom">
+                            <label class="form-check-label">Nada.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="proteina" id="" value="">
+                            <label class="form-check-label">Nada.</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                </form>
+
+                <form id="queijo">
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading5">Escolha o queijo perfeito para o seu lanche.</h1>
+                    </div>
+                    <br><br>
+                    <div class="grade">
+                        <div class="content">                            
+                            <input class="form-check-input" type="radio" name="queijo" id="cheddar" value="cheddar">
+                            <label class="form-check-label">Cheddar.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="queijo" id="mussarela" value="mussarela">
+                            <label class="form-check-label">Mussarela.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="queijo" id="suiço" value="suiço">
+                            <label class="form-check-label">Suiço.</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="queijo" id="provolone" value="provolone">
+                            <label class="form-check-label">Provolone</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="queijo" id="gorgozola" value="gorgozola">
+                            <label class="form-check-label">Gorgonzola</label>
+                        </div>
+                        <div class="content">
+                            <input class="form-check-input" type="radio" name="queijo" id="" value="">
+                            <label class="form-check-label">Sem queijo.</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                </form>
+
+                <form id="complemento">
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading6">Escolha um complemento que adicione mais sabor ao seu lanche.</h1>
+                    </div>
+                    <br><br>
+                    <div class="grade">
+                        <div class="content">                            
+                            
+                        </div>
+                        <div class="content">
+                            
+                        </div>
+                        <div class="content">
+                            
+                        </div>
+                        <div class="content">
+                            
+                        </div>
+                        <div class="content">
+                            
+                        </div>
+                        <div class="content">
+                            
+                        </div>
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                </form>
+
+                <form id="salada">
+                    <div class="opt" style="background-image: url('')">
+                        <h1 id="scrollspyHeading7">Escolha uma salada que deixe o seu lanche ainda mais perfeito.</h1>
                     </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
-                <form>
+                <form id="tempero">
                     <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading4">Escolha algo para passar no pão para complementar essa delicia.</h1>
+                        <h1 id="scrollspyHeading8">Escolha um tempero para dar ainda mais sabor a essa perfeição.</h1>
                     </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
-                <form>
+                <form id="molho">
                     <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading5">Escolha um complemento que adicione mais sabor ao seu lanche.</h1>
+                        <h1 id="scrollspyHeading9">Escolha um molho para finalizar o seu lanche ideal.</h1>
                     </div>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br>
                 </form>
 
+                <input type="submit" class="btn btn-primary btn-lg" id="scrollspyHeading10">Finalizar o pedido</button>
 
-                <form>
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading6">Escolha uma salada que deixe o seu lanche ainda mais perfeito.</h1>
-                    </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br>
-                </form>
+                <?php
 
-                <form>
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading7">Escolha um tempero para dar ainda mais sabor a essa perfeição.</h1>
-                    </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br>
-                </form>
-
-                <form>
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading8">Escolha um molho para finalizar o seu lanche ideal.</h1>
-                    </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br>
-                </form>
-
-
+                    echo "<h2> $tamanho <h/2>";
+                    $pao;
+                    $recheio;
+                    $proteina;
+                    $queijo; 
+                ?>
             </div>
         </body>
     </html>
