@@ -42,12 +42,12 @@
                 <div class="login">
                     <h2 style="font-size: 50px">FIND FOOD</H2>
                     <h1>Bem vindo(a)</h1>
-                    <br>
+                    <br><br>
 
                     <form action="" method="post" name="form">
                         <div class="mb-3">
                             <label for="formlogin1" class="form-label">nome de usuario</label><br>
-                            <input id="myInput" class="formlogin1" type="text" placeholder="Digite aqui" name="user" aria-label=".form-control-lg example"><br>
+                            <input id="myInput" class="formlogin1" type="text" placeholder="Digite aqui" name="user" aria-label=".form-control-lg example"><br><br>
                             
                             <input id="myBtn" class="btn btn-primary btn-sm" type="button" value="Entrar" onclick="entrar()">
                         </div>
