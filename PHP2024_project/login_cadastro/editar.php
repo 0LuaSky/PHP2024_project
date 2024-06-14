@@ -1,12 +1,13 @@
 <?php
-	require 'config.php';
-
-	$usuario = [];
-	$id = filter_input(INPUT_GET, 'id');
+	require 'config.php'; //O require é necessário para chamar o arquivo config.php por conta das configurações do banco de dados
+    require "bootsLibs.php";
+	
+	$usuario = []; //Vetor de usuários
+	$id = filter_input(INPUT_GET, 'id'); //Resgatando id com uma variável auxiliar
 	if($id){
 		$sql = $pdo->prepare("SELECT * FROM usuario WHERE id = :id");
 		$sql->bindValue(':id', $id);
-		$sql->execute();
+		$sql->execute(); //execução no banco de dados
 
 		if($sql->rowCount() > 0){
 			$usuario = $sql->fetch(PDO::FETCH_ASSOC);
@@ -15,7 +16,7 @@
 			exit;
 		}
 	}else{
-		header("Location: cadastrar.php");
+		header("Location: usuarios_cadastrados.php");
 	}
 
 ?>

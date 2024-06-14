@@ -75,8 +75,6 @@
                 //Arquivo para a barra superiora ser incluida na pagina.
                 require "web_inf/navBar.php";
             ?>
-
-            <!-- Div contendo um "espião" que localiza os items para demonstrar na navbar /-->
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
                 
                 <!--Carrosel do bootstrap que mostra 3 imagems com promoções e alertas. -->
@@ -133,7 +131,7 @@
                         <br><br>
                         <div class="grade">
                             <div class="content">                           
-                                    <input class="form-check-input" type="radio" name="tamanho" id="pequeno" value="pequeno" checked>
+                                    <input class="form-check-input" type="radio" name="tamanho" id="pequeno" value="pequeno">
                                     <label class="form-check-label">Pequeno.</label>
                                     <h2>&nbsp R$ 6,99</h2>
                             </div>
@@ -166,7 +164,7 @@
                         <br><br>
                         <div class="grade">
                             <div class="content">                            
-                                <input class="form-check-input" type="radio" name="pao" id="branco" value="branco" checked>
+                                <input class="form-check-input" type="radio" name="pao" id="branco" value="branco">
                                 <label class="form-check-label">Pão Branco.&nbsp &nbsp</label>
 
                             </div>
@@ -211,7 +209,7 @@
                         <br><br>
                         <div class="grade">
                             <div class="content">                            
-                                <input class="form-check-input" type="radio" name="recheio" id="manteiga" value="manteiga" checked>
+                                <input class="form-check-input" type="radio" name="recheio" id="manteiga" value="manteiga">
                                 <label class="form-check-label">Manteiga.</label>
                             </div>
                             <div class="content">
@@ -247,7 +245,7 @@
                         <br><br>
                         <div class="grade">
                             <div class="content">                            
-                                <input class="form-check-input" type="radio" name="proteina" id="frango" value="frango" checked>
+                                <input class="form-check-input" type="radio" name="proteina" id="frango" value="frango">
                                 <label class="form-check-label">Frango.</label>
                                 <h4>&nbsp Adicional de R$ 2,99</h4>
                             </div>
@@ -299,7 +297,7 @@
                         <br><br>
                         <div class="grade">
                             <div class="content">                            
-                                <input class="form-check-input" type="radio" name="queijo" id="cheddar" value="cheddar" checked>
+                                <input class="form-check-input" type="radio" name="queijo" id="cheddar" value="cheddar">
                                 <label class="form-check-label">Cheddar.</label>
                                 <h4>&nbsp Adicional de R$ 0,99</h4>
                             </div>
@@ -395,45 +393,9 @@
                     <div id="salada">
                         <div class="opt" style="background-image: url('')">
                             <h1 id="scrollspyHeading7">Escolha uma salada que deixe o seu lanche ainda mais perfeito.</h1>
-                            
                         </div>
-                        <br><br>
-                        <div class="grade">
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="alface" id="alface" value="alface" >
-                                <label class="form-check-label" for="flexCheckDefault">Alface.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="rucula" id="rucula" value="rucula" >
-                                <label class="form-check-label" for="flexCheckDefault">Rucula.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="tomate" id="tomate" value="tomate" >
-                                <label class="form-check-label" for="flexCheckDefault">Tomate.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="cebola" id="cebola" value="cebola" >
-                                <label class="form-check-label" for="flexCheckDefault">Cebola.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="cenora" id="cenora" value="cenora" >
-                                <label class="form-check-label" for="flexCheckDefault">Cenora.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="azeitona" id="azeitona" value="azeitona" >
-                                <label class="form-check-label" for="flexCheckDefault">Azeitona.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="picles" id="picles" value="picles" >
-                                <label class="form-check-label" for="flexCheckDefault">Picles.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
+                        <div class="content">
+
                         </div>
                         <br><br>
                         <br><br>
@@ -444,28 +406,8 @@
                         <div class="opt" style="background-image: url('')">
                             <h1 id="scrollspyHeading8">Escolha um tempero para dar ainda mais sabor a essa perfeição.</h1>
                         </div>
-                        <br><br>
-                        <div class="grade">
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="sal" id="sal" value="sal" >
-                                <label class="form-check-label" for="flexCheckDefault">Sal.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="pimenta" id="pimenta" value="pimenta" >
-                                <label class="form-check-label" for="flexCheckDefault">Pimenta.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="azeite" id="azeite" value="azeite" >
-                                <label class="form-check-label" for="flexCheckDefault">Azeite.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
-                            <div class="content">
-                                <input class="form-check-input" type="checkbox" name="vinagre" id="vinagre" value="vinagre" >
-                                <label class="form-check-label" for="flexCheckDefault">Vinagre.</label>
-                                <h4>&nbsp Adicional de R$ 0,99</h4>
-                            </div>
+                        <div class="content">
+
                         </div>
                         <br><br>
                         <br><br>
@@ -476,8 +418,7 @@
                         <div class="opt" style="background-image: url('')">
                             <h1 id="scrollspyHeading9">Escolha um molho para finalizar o seu lanche ideal.</h1>
                         </div>
-                        <br><br>
-                        <div class="grade">
+                        <div class="content">
 
                         </div>
                         <br><br>
@@ -490,19 +431,15 @@
                         <input type="reset" name="reset" class="btn btn-primary btn-lg" value="Desfazer" style="margin-right: auto;"  >
                     </div>                
                 </form>
-                
-            </div>
 
-            <?php
-                {
-                    //difinição de variaveis
+
+                <?php
                     $boolTamanho = $boolPao = $boolRecheio = $boolProteina = $boolQueijo = false;
-                    $boolComplemento = $boolSalada = $boolTempero = $boolMolho = false;
-                    $i = 0;
+                    $boolComplemento = false;
 
                     $preco = 0;
 
-                    //verificando se as opções foram selecionadas
+
                     if ( empty($_POST["tamanho"]) ) {
                         $boolTamanho = false;
                     } else {
@@ -532,224 +469,74 @@
                     } else {
                         $boolQueijo = true;
                     }
-                }
-                //verificando se existe um complemento
-                if(isset($_POST['catupiry']) || isset($_POST['cheddar_cremoso']) || isset($_POST['cream_cheese']) || isset($_POST['pate_peru']) || isset($_POST['bacom']) || isset($_POST['salame']) || isset($_POST['dobro_queijo']) || isset($_POST['dobro_proteina'])){
-                    $boolComplemento = true;
-                }else{
-                    $boolComplemento = false;
-                }
-                if(isset($_POST['alface']) || isset($_POST['rucula']) || isset($_POST['tomate']) || isset($_POST['cebola']) || isset($_POST['cenora']) || isset($_POST['azeitona']) || isset($_POST['picles'])){
-                    $boolSalada = true;
-                }else{
-                    $boolSalada = false;
-                }
-                if(isset($_POST['alface']) || isset($_POST['rucula']) || isset($_POST['tomate']) || isset($_POST['cebola']) || isset($_POST['cenora']) || isset($_POST['azeitona']) || isset($_POST['picles'])){
-                    $boolTempero = true;
-                }else{
-                    $boolTempero = false;
-                }
-                if(isset($_POST['sal']) || isset($_POST['pimenta']) || isset($_POST['azeite']) || isset($_POST['vinagre'])){
-                    $boolSalada = true;
-                }else{
-                    $boolSalada = false;
-                }
 
-                //verificando se todas as opções foram selecionas corretamente.
-                if($boolTamanho && $boolPao && $boolRecheio && $boolProteina && $boolQueijo === true){
-                    //com base no "tamanho" define o preço do lanche
-                    switch($_POST["tamanho"]){
-                        case 'pequeno':{
-                            $preco += 6.99;
-                            break;
-                        }
-                        case'medio':{
-                            $preco += 10.99;
-                            break;
-                        }
-                        case 'grande':{
-                            $preco += 14.99;
-                            break;
-                        }
-                        case'colossal':{
-                            $preco += 18.99;
-                            break;
-                        }
-                    }
-
-                    //autmena o preco com base na proteina escolhida
-                    if($proteina == "frango" || $proteina== "carne"){
-                        $preco += 2.99;
-                    }else if($proteina != "sem_proteina"){
-                        $preco += 1.99;
-                    }
-
-                    //Aumenta o preço com base no queijo
-                    if($queijo != "sem_queijo"){
-                        $preco += 0.99;
-                    }
-
-                    echo "<div style='display: flex; margin: auto;'>
-                            <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>";
-                    //verifica se o "complemento" foi preenchido, caso não tenha sido, avisara que não foi preenchido, caso seja prenchido ira sumar no preco.
-                    if($boolComplemento == false){
-                        echo "não escolheu um complemento.<br>";
-
+                    if(isset($_POST['catupiry']) || isset($_POST['cheddar_cremoso']) || isset($_POST['cream_cheese']) || isset($_POST['pate_peru']) || isset($_POST['bacom']) || isset($_POST['salame']) || isset($_POST['dobro_queijo']) || isset($_POST['dobro_proteina'])){
+                        $boolComplemento = true;
                     }else{
-                        for($i=0; $i<8; $i++){
-                            switch($i){
-                                case 0:{
-                                    if(isset($_POST['catupiry'])){
-                                        $preco += 2.99;
-                                    }
-                                    break;
-                                }
-                                case 1:{
-                                    if(isset($_POST['cheddar_cremoso'])){
-                                        $preco += 2.99;
-                                    }
-                                    break;
-                                }
-                                case 2:{
-                                    if(isset($_POST['cream_cheese'])){
-                                        $preco += 2.99;
-                                    }
-                                    break;
-                                }
-                                case 3:{
-                                    if(isset($_POST['pate_peru'])){
-                                        $preco += 2.99;
-                                    }
-                                    break;
-                                }
-                                case 4:{
-                                    if(isset($_POST['bacom'])){
-                                        $preco += 2.99;
-                                    }
-                                    break;
-                                }
-                                case 5:{
-                                    if(isset($_POST['salame'])){
-                                        $preco += 2.99;
-                                    }
-                                    break;
-                                }
-                                case 6:{
-                                    if(isset($_POST['dobro_queijo'])){
-                                        $preco += 4.99;
-                                    }
-                                    break;
-                                }
-                                case 7:{
-                                    if(isset($_POST['dobro_proteina'])){
-                                        $preco += 6.99;
-                                    }
-                                    break;
-                                }
+                        $boolComplemento = false;
+                    }
+
+                    if($boolTamanho && $boolPao && $boolRecheio && $boolProteina && $boolQueijo === true){
+                        switch($_POST["tamanho"]){
+                            case 'pequeno':{
+                                $preco += 6.99;
+                                break;
+                            }
+                            case'medio':{
+                                $preco += 10.99;
+                                break;
+                            }
+                            case 'grande':{
+                                $preco += 14.99;
+                                break;
+                            }
+                            case'colossal':{
+                                $preco += 18.99;
+                                break;
                             }
                         }
-                    }
 
-                    //Verifica se tem "salada" no lanche, caso tenha ira sumar no prec, caso não avisara que não foi preenchido.
-                    if($boolSalada == false){
-                        echo "<div style='display: flex; margin: auto;'>
-                                <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>
-                                    Voce não escolheu uma salada.
-                                </h5>    
-                            </div>";
-                    }else{
-                        $i = 1;
-                        while($i <= 7){
-                            switch($i){
-                                case 1:{
-                                    if(isset($_POST['alface'])){
-                                        $preco += 0.99;
-                                    }
-                                    break;
-                                }
-                                case 2:{
-                                    if(isset($_POST['rucula'])){
-                                        $preco += 0.99;
-                                    }
-                                    break;
-                                }
-                                case 3:{
-                                    if(isset($_POST['tomate'])){
-                                        $preco += 0.99;
-                                    }
-                                    break;
-                                }
-                                case 4:{
-                                    if(isset($_POST['cebola'])){
-                                        $preco += 0.99;
-                                    }
-                                    break;
-                                }
-                                case 5:{
-                                    if(isset($_POST['cenora'])){
-                                        $preco += 0.99;
-                                    }
-                                    break;
-                                }
-                                case 6:{
-                                    if(isset($_POST['azeitona'])){
-                                        $preco += 0.99;
-                                    }
-                                    break;
-                                }
-                                case 7:{
-                                    if(isset($_POST['picles'])){
-                                        $preco += 0.99;
-                                    }
-                                    break;
-                                }
-                            } 
-                            $i++;
-                        }
-                    }
-                    
-                    //verifica se tem um tempero, caso não tenha ira falar que não tem
-                    if($boolTempero == false){
-                        echo "<div style='display: flex; margin: auto;'>
-                                <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>
-                                    Voce não escolheu um tempero.
-                                </h5>    
-                            </div>";
-                    }
-
-                    //demontra as opções que foram escolhidos e o preço
-                    echo "<div style='display: flex; margin: auto;'>
-                            <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>
-                                confira seu pedido : R$", $preco, "<br>
-                                tamanho: ", $tamanho ,"<br>
-                                Pão: ", $pao ,"<br>
-                                recheio: ", $recheio, "<br>
-                                proteina: ", $proteina, "<br>
-                                queijo: ", $queijo, "<br>
-                            </h5>    
-                            </div>";
-
-
-                }else{
-                    echo "<br><br> <div style='display: flex; margin: auto;'> <h5 id='falta' style='margin-left: auto; margin-right: auto;'> Parece que seu pedido esta incompleto, Faltou escolher";
-                    if ( $boolTamanho == false ) {
-                        echo " o tamanho";
-                    }
-                    if ( $boolPao == false ) {
-                        echo " o pão";
-                    }
-                    if ( $boolRecheio == false ) {
-                        echo " o recheio";
-                    }
-                    if ( $boolProteina == false ) {
-                        echo " a proteina";
-                    }
-                    if ( $boolQueijo == false ) {
-                        echo " o queijo";
-                    }
                         
-                    echo " do lanche.</h5>";    
-                }
-            ?>
+
+                        if($boolComplemento == false){
+                            echo "<div style='display: flex; margin: auto;'>
+                                    <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>
+                                        Voce não escolheu um complemento.
+                                    </h5>    
+                                </div>";
+                        }
+
+                        echo "<div style='display: flex; margin: auto;'>
+                                <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>
+                                    confira seu pedido : R$", $preco, "<br>
+                                    tamanho: ", $tamanho ,"<br>
+                                    Pão: ", $pao ,"<br>
+                                    recheio: ", $recheio, "<br>
+                                    proteina: ", $proteina, "<br>
+                                    queijo: ", $queijo, "<br>
+                                </h5>    
+                              </div>";
+                    }else{
+                        echo "<br><br> <div style='display: flex; margin: auto;'> <h5 id='falta' style='margin-left: auto; margin-right: auto;'> Parece que seu pedido esta incompleto, Faltou escolher";
+                        if ( $boolTamanho == false ) {
+                            echo " o tamanho";
+                        }
+                        if ( $boolPao == false ) {
+                            echo " o pão";
+                        }
+                        if ( $boolRecheio == false ) {
+                            echo " o recheio";
+                        }
+                        if ( $boolProteina == false ) {
+                            echo " a proteina";
+                        }
+                        if ( $boolQueijo == false ) {
+                            echo " o queijo";
+                        }
+                            
+                        echo " do lanche.</h5>";    
+                    }
+                ?>
+            </div>
         </body>
     </html>

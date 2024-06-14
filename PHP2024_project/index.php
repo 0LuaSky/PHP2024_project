@@ -42,7 +42,7 @@
                 <div class="login">
                     <h2 style="font-size: 50px">FIND FOOD</H2>
                     <h1>Bem vindo(a)</h1>
-                    <br><br>
+                    <br>
 
                     <form action="" method="post" name="form">
                         <div class="mb-3">
@@ -50,6 +50,7 @@
                             <input id="myInput" class="formlogin1" type="text" placeholder="Digite aqui" name="user" aria-label=".form-control-lg example"><br><br>
                             
                             <input id="myBtn" class="btn btn-primary btn-sm" type="button" value="Entrar" onclick="entrar()">
+                            <a class="btn btn-primary btn-sm" href="/php2024_project-main/PHP2024_project/login_cadastro/cadastrar.php" role="button">Cadastrar</a>
                         </div>
                     </form>
                 </div>

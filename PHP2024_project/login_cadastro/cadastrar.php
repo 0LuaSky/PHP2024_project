@@ -1,4 +1,6 @@
 <!-- Formulário para o sistema de Cadastro e Login. -->
+<?php require "bootsLibs.php"?>
+<?php require "navbar.php";?>
 <form method="POST" action="cadastrar_action.php">
     <label>
         Nome: <input type="text" name="nome"/>
@@ -8,4 +10,3 @@
     </label>
     <input type="submit" value="Salvar"/>
 </form>
-<a href="usuarios_cadastrados.php">Usuários cadastrados</a>
