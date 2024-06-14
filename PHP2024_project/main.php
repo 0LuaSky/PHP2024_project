@@ -1,9 +1,9 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en" data-bs-theme="dark">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>placeHolder</title>
+            <title>Find Food</title>
 
             <style>
                 .opt{
@@ -25,18 +25,45 @@
                 }
             </style>
 
+            
+        </head>
+        <body>
+            
             <?php
                 // define as variaveis como nulas
-                $tamanho = $pao = $recheio = $proteina = $queijo = "";
+                $tamanho = $pao = $recheio = $proteina = $queijo = " ";
+                $complemento = $salada = $tempero = $molho = " ";
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $tamanho = test_input($_POST["tamanho"]);
-                    $pao = test_input($_POST["pao"]);
-                    $recheio = test_input($_POST["recheio"]);
-                    $proteina = test_input($_POST["proteina"]);
-                    $queijo = test_input($_POST["queijo"]);
+                    if ( !empty($_POST["tamanho"]) ) {
+                        $tamanho = test_input($_POST["tamanho"]);
+                    }
+                    if ( !empty($_POST["pao"]) ) {
+                        $pao = test_input($_POST["pao"]);
+                    }
+                    if ( !empty($_POST["recheio"]) ) {
+                        $recheio = test_input($_POST["recheio"]);
+                    }
+                    if ( !empty($_POST["proteina"]) ) {
+                        $proteina = test_input($_POST["proteina"]);
+                    }
+                    if ( !empty($_POST["queijo"]) ) {
+                        $queijo = test_input($_POST["queijo"]);
+                    }
+                    if ( !empty($_POST["complemento"]) ) {
+                        $complemento = test_input($_POST["complemento"]);
+                    }
+                    if ( !empty($_POST["tempero"]) ) {
+                        $tempero = test_input($_POST["tempero"]);
+                    }
+                    if ( !empty($_POST["proteina"]) ) {
+                        $proteina = test_input($_POST["proteina"]);
+                    }
+                    if ( !empty($_POST["molho"]) ) {
+                        $molho = test_input($_POST["molho"]);
+                    }
                 }
-
+                  
                 function test_input($data) {
                     $data = trim($data);
                     $data = stripslashes($data);
@@ -44,9 +71,6 @@
                     return $data;
                 }
             ?>
-        </head>
-        <body>
-            
             <?php
                 //Arquivo para a barra superiora ser incluida na pagina.
                 require "web_inf/navBar.php";
@@ -94,265 +118,424 @@
                 </div>
 
                 <!--
-                    Forms responsaveis pela seleção de como sera o lanche.
-                    com "rastredores que permitem ver onde o usuario es em sua posição na pagina.    
+                    Form responsaveis pela seleção de como sera o lanche.
+                    com divs dentro possuindo "rastredores" que permitem ver onde o usuario es em sua posição na pagina.    
                 /-->
+ 
+                <form method="POST" id="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <div id="tamanho">
+                    
+                        <div class="opt" style="background-image: url('web_inf/imagem/tamanho.jpg')">
+                            <h1 id="scrollspyHeading1">Escolha o tamanho certo para preencher seu vazio.</h1>
+                        </div>
+                        <br><br>
+                        <div class="grade">
+                            <div class="content">                           
+                                    <input class="form-check-input" type="radio" name="tamanho" id="pequeno" value="pequeno">
+                                    <label class="form-check-label">Pequeno.</label>
+                                    <h2>&nbsp R$ 6,99</h2>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="tamanho" id="medio" value="medio">
+                                <label class="form-check-label">Médio.&nbsp &nbsp &nbsp</label>
+                                <h2>&nbsp &nbsp R$ 10,99</h2>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="tamanho" id="grande" value="grande">
+                                <label class="form-check-label">Grande. &nbsp </label>
+                                <h2>&nbsp &nbsp R$ 14,99</h2>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="tamanho" id="colossal" value="colossal">
+                                <label class="form-check-label">COLOSAL!</label>
+                                <h2>&nbsp &nbsp R$ 18,99</h2>
+                            </div>
 
-                <form id="tamanho">
-                    <div class="opt" style="background-image: url('web_inf/imagem/tamanho.jpg')">
-                        <h1 id="scrollspyHeading1">Escolha o tamanho certo para preencher seu vazio.</h1>
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
                     </div>
-                    <br><br>
-                    <div class="grade">
-                        <div class="content">                            
-                            <input class="form-check-input" type="radio" name="tamanho" id="pequeno" value="pequeno">
-                            <label class="form-check-label">Pequeno.</label>
-                            <h2>&nbsp R$ 6,99</h2>
+
+                    <div id="pao">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading2">Escolha o pão ideal para você.</h1>
                         </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="tamanho" id="medio" value="medio">
-                            <label class="form-check-label">Médio.&nbsp &nbsp &nbsp</label>
-                            <h2>&nbsp R$ 11,99</h2>
+                        <br><br>
+                        <div class="grade">
+                            <div class="content">                            
+                                <input class="form-check-input" type="radio" name="pao" id="branco" value="branco">
+                                <label class="form-check-label">Pão Branco.&nbsp &nbsp</label>
+
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="pao" id="tres_queijo" value="tres_queijo">
+                                <label class="form-check-label">três queijos.&nbsp</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="pao" id="integral" value="integral">
+                                <label class="form-check-label">Integral.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="pao" id="australiano" value="australiano">
+                                <label class="form-check-label">Australiano. &nbsp</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="pao" id="brioche" value="brioche">
+                                <label class="form-check-label">Brioche.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="pao" id="batata" value="batata">
+                                <label class="form-check-label">Pão de batata.</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="pao" id="vegano" value="vegano">
+                                <label class="form-check-label">Vegano.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="pao" id="sem_glutem" value="sem_glutem">
+                                <label class="form-check-label">Glutem free. &nbsp &nbsp</label>
+                            </div>
                         </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="tamanho" id="grande" value="grande">
-                            <label class="form-check-label">Grande. &nbsp </label>
-                            <h2>&nbsp &nbsp R$ 15,99</h2>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="tamanho" id="colossal" value="colossal">
-                            <label class="form-check-label">COLOSAL!</label>
-                            <h2>&nbsp &nbsp R$ 22,99</h2>
-                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
                     </div>
-                    <br><br>
-                    <br><br>
-                    <br><br>
+                    
+                    <div id="recheio">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading3">Escolha algo para passar no pão para complementar essa delicia.</h1>
+                        </div>
+                        <br><br>
+                        <div class="grade">
+                            <div class="content">                            
+                                <input class="form-check-input" type="radio" name="recheio" id="manteiga" value="manteiga">
+                                <label class="form-check-label">Manteiga.</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="recheio" id="requejão" value="requejão">
+                                <label class="form-check-label">Requejão.</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="recheio" id="maionese" value="maionese">
+                                <label class="form-check-label">Maionese.</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="recheio" id="margarina" value="margarina">
+                                <label class="form-check-label">Margarina</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="recheio" id="maionese_vegie" value="maionese_vegie">
+                                <label class="form-check-label">Maionese vegie.</label>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="recheio" id="sem_recheio" value="sem_recheio">
+                                <label class="form-check-label">Sem recheio.</label>
+                            </div>
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+
+                    <div id="proteina">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading4">Escolha uma proteina para dar sabor ao seu lanche.</h1>
+                        </div>
+                        <br><br>
+                        <div class="grade">
+                            <div class="content">                            
+                                <input class="form-check-input" type="radio" name="proteina" id="frango" value="frango">
+                                <label class="form-check-label">Frango.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="proteina" id="carne" value="carne">
+                                <label class="form-check-label">Carne.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="proteina" id="vegano" value="vegano">
+                                <label class="form-check-label">Vegano.</label>
+                                <h4>&nbsp Adicional de R$ 1,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="proteina" id="presunto" value="presunto">
+                                <label class="form-check-label">presunto</label>
+                                <h4>&nbsp Adicional de R$ 1,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="proteina" id="mortadela" value="mortadela">
+                                <label class="form-check-label">Mortadela</label>
+                                <h4>&nbsp Adicional de R$ 1,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="proteina" id="peito_de_peru" value="peito_de_peru">
+                                <label class="form-check-label">Peito de peru</label>
+                                <h4>&nbsp Adicional de R$ 1,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="proteina" id="bacom" value="bacom">
+                                <label class="form-check-label">Bacom.</label>
+                                <h4>&nbsp Adicional de R$ 1,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="proteina" id="sem_proteina" value="sem_proteina">
+                                <label class="form-check-label">Sem proteina.</label>
+                                <h4>&nbspSem Adicional</h4>
+                            </div>
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+
+                    <div id="queijo">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading5">Escolha o queijo perfeito para o seu lanche.</h1>
+                        </div>
+                        <br><br>
+                        <div class="grade">
+                            <div class="content">                            
+                                <input class="form-check-input" type="radio" name="queijo" id="cheddar" value="cheddar">
+                                <label class="form-check-label">Cheddar.</label>
+                                <h4>&nbsp Adicional de R$ 0,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="queijo" id="mussarela" value="mussarela">
+                                <label class="form-check-label">Mussarela.</label>
+                                <h4>&nbsp Adicional de R$ 0,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="queijo" id="suiço" value="suiço">
+                                <label class="form-check-label">Suiço.</label>
+                                <h4>&nbsp Adicional de R$ 0,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="queijo" id="provolone" value="provolone">
+                                <label class="form-check-label">Provolone</label>
+                                <h4>&nbsp Adicional de R$ 0,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="queijo" id="gorgozola" value="gorgozola">
+                                <label class="form-check-label">Gorgonzola</label>
+                                <h4>&nbsp Adicional de R$ 0,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="queijo" id="parmezao" value="parmezao">
+                                <label class="form-check-label">Parmezão.</label>
+                                <h4>&nbsp Adicional de R$ 0,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="radio" name="queijo" id="sem_queijo" value="sem_queijo">
+                                <label class="form-check-label">Sem queijo.</label>
+                                <h4>&nbsp Sem Adicional</h4>
+                            </div>
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+
+                    <div id="complemento">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading6">Escolha um complemento que adicione mais sabor ao seu lanche.</h1>
+                        </div>
+                        <br><br>
+                        <div class="grade">
+                            <div class="content">                            
+                                <input class="form-check-input" type="checkbox" name="catupiry" id="catupiry" value="catupiry" >
+                                <label class="form-check-label" for="flexCheckDefault">Catupiry.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="checkbox" name="cheddar_cremoso" id="cheddar_cremoso" value="cheddar_cremoso" >
+                                <label class="form-check-label" for="flexCheckDefault">Cheddar Cremoso.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="checkbox" name="cream_cheese" id="cream_cheese" value="cream_cheese" >
+                                <label class="form-check-label" for="flexCheckDefault">Cream Cheese.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="checkbox" name="pate_peru" id="pate_peru" value="pate_peru" >
+                                <label class="form-check-label" for="flexCheckDefault">Patê de peito de peru.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="checkbox" name="bacom" id="bacom" value="bacom" >
+                                <label class="form-check-label" for="flexCheckDefault">Bacom.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                                </div>
+                            <div class="content">
+                                <input class="form-check-input" type="checkbox" name="salame" id="salame" value="salame" >
+                                <label class="form-check-label" for="flexCheckDefault">Salame.</label>
+                                <h4>&nbsp Adicional de R$ 2,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="checkbox" name="dobro_queijo" id="dobro_queijo" value="dobro_queijo" >
+                                <label class="form-check-label" for="flexCheckDefault">Dobro de Queijo.</label>
+                                <h4>&nbsp Adicional de R$ 4,99</h4>
+                            </div>
+                            <div class="content">
+                                <input class="form-check-input" type="checkbox" name="dobro_proteina" id="dobro_proteina" value="dobro_proteina" >
+                                <label class="form-check-label" for="flexCheckDefault">Dobro de Proteina.</label>
+                                <h4>&nbsp Adicional de R$ 6,99</h4>
+
+                            </div>
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+
+                    <div id="salada">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading7">Escolha uma salada que deixe o seu lanche ainda mais perfeito.</h1>
+                        </div>
+                        <div class="content">
+
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+
+                    <div id="tempero">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading8">Escolha um tempero para dar ainda mais sabor a essa perfeição.</h1>
+                        </div>
+                        <div class="content">
+
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+
+                    <div id="molho">
+                        <div class="opt" style="background-image: url('')">
+                            <h1 id="scrollspyHeading9">Escolha um molho para finalizar o seu lanche ideal.</h1>
+                        </div>
+                        <div class="content">
+
+                        </div>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+                    
+                    <div id="scrollspyHeading10" style="display: flex; margin: auto;" >
+                        <input type="submit" name="submit" class="btn btn-primary btn-lg" value="Finalizar o pedido" style="margin-left: auto; margin-right: 1%;">
+                        <input type="reset" name="reset" class="btn btn-primary btn-lg" value="Desfazer" style="margin-right: auto;"  >
+                    </div>                
                 </form>
 
-                <form id="pao">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading2">Escolha o pão ideal para você.</h1>
-                    </div>
-                    <br><br>
-                    <div class="grade">
-                        <div class="content">                            
-                            <input class="form-check-input" type="radio" name="pao" id="branco" value="branco">
-                            <label class="form-check-label">Pão Branco.&nbsp &nbsp</label>
-
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="pao" id="tres_queijo" value="tres_queijo">
-                            <label class="form-check-label">três queijos.&nbsp</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="pao" id="integral" value="integral">
-                            <label class="form-check-label">Integral.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="pao" id="australiano" value="australiano">
-                            <label class="form-check-label">Australiano. &nbsp</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="pao" id="brioche" value="brioche">
-                            <label class="form-check-label">Brioche.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="pao" id="batata" value="batata">
-                            <label class="form-check-label">Pão de batata.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="pao" id="vegano" value="vegano">
-                            <label class="form-check-label">Vegano.&nbsp &nbsp &nbsp &nbsp &nbsp</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="pao" id="sem_glutem" value="sem_glutem">
-                            <label class="form-check-label">Glutem_free. &nbsp &nbsp</label>
-                        </div>
-                    </div>
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                </form>
-                
-                <form id="recheio">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading3">Escolha algo para passar no pão para complementar essa delicia.</h1>
-                    </div>
-                    <br><br>
-                    <div class="grade">
-                        <div class="content">                            
-                            <input class="form-check-input" type="radio" name="recheio" id="manteiga" value="manteiga">
-                            <label class="form-check-label">Manteiga.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="recheio" id="requejão" value="requejão">
-                            <label class="form-check-label">Requejão.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="recheio" id="maionese" value="maionese">
-                            <label class="form-check-label">Maionese.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="recheio" id="margarina" value="margarina">
-                            <label class="form-check-label">Margarina</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="recheio" id="maionese_vegie" value="maionese_vegie">
-                            <label class="form-check-label">Maionese vegie.</label>
-                        </div>
-                    </div>
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                </form>
-
-                <form id="proteina">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading4">Escolha uma proteina para dar sabor ao seu lanche.</h1>
-                    </div>
-                    <br><br>
-                    <div class="grade">
-                        <div class="content">                            
-                            <input class="form-check-input" type="radio" name="proteina" id="frango" value="frango">
-                            <label class="form-check-label">Frango.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="proteina" id="carne" value="carne">
-                            <label class="form-check-label">Carne.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="proteina" id="presunto" value="presunto">
-                            <label class="form-check-label">presunto</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="proteina" id="mortadela" value="mortadela">
-                            <label class="form-check-label">Mortadela</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="proteina" id="peito_de_peru" value="peito_de_peru">
-                            <label class="form-check-label">Peito de peru</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="proteina" id="vegano" value="vegano">
-                            <label class="form-check-label">Vegano.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="proteina" id="bacom" value="bacom">
-                            <label class="form-check-label">Nada.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="proteina" id="" value="">
-                            <label class="form-check-label">Nada.</label>
-                        </div>
-                    </div>
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                </form>
-
-                <form id="queijo">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading5">Escolha o queijo perfeito para o seu lanche.</h1>
-                    </div>
-                    <br><br>
-                    <div class="grade">
-                        <div class="content">                            
-                            <input class="form-check-input" type="radio" name="queijo" id="cheddar" value="cheddar">
-                            <label class="form-check-label">Cheddar.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="queijo" id="mussarela" value="mussarela">
-                            <label class="form-check-label">Mussarela.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="queijo" id="suiço" value="suiço">
-                            <label class="form-check-label">Suiço.</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="queijo" id="provolone" value="provolone">
-                            <label class="form-check-label">Provolone</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="queijo" id="gorgozola" value="gorgozola">
-                            <label class="form-check-label">Gorgonzola</label>
-                        </div>
-                        <div class="content">
-                            <input class="form-check-input" type="radio" name="queijo" id="" value="">
-                            <label class="form-check-label">Sem queijo.</label>
-                        </div>
-                    </div>
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                </form>
-
-                <form id="complemento">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading6">Escolha um complemento que adicione mais sabor ao seu lanche.</h1>
-                    </div>
-                    <br><br>
-                    <div class="grade">
-                        <div class="content">                            
-                            
-                        </div>
-                        <div class="content">
-                            
-                        </div>
-                        <div class="content">
-                            
-                        </div>
-                        <div class="content">
-                            
-                        </div>
-                        <div class="content">
-                            
-                        </div>
-                        <div class="content">
-                            
-                        </div>
-                    </div>
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                </form>
-
-                <form id="salada">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading7">Escolha uma salada que deixe o seu lanche ainda mais perfeito.</h1>
-                    </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br>
-                </form>
-
-                <form id="tempero">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading8">Escolha um tempero para dar ainda mais sabor a essa perfeição.</h1>
-                    </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br>
-                </form>
-
-                <form id="molho">
-                    <div class="opt" style="background-image: url('')">
-                        <h1 id="scrollspyHeading9">Escolha um molho para finalizar o seu lanche ideal.</h1>
-                    </div>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <br><br>
-                </form>
-
-                <input type="submit" class="btn btn-primary btn-lg" id="scrollspyHeading10">Finalizar o pedido</button>
 
                 <?php
+                    $boolTamanho = $boolPao = $boolRecheio = $boolProteina = $boolQueijo = false;
+                    $boolComplemento = false;
 
-                    echo "<h2> $tamanho <h/2>";
-                    $pao;
-                    $recheio;
-                    $proteina;
-                    $queijo; 
+                    $preco = 0;
+
+
+                    if ( empty($_POST["tamanho"]) ) {
+                        $boolTamanho = false;
+                    } else {
+                        $boolTamanho = true;
+                    }
+
+                    if ( empty($_POST["pao"]) ) {
+                        $boolPao = false;
+                    } else {
+                        $boolPao = true;
+                    }
+
+                    if ( empty($_POST["recheio"]) ) {
+                        $boolRecheio = false;
+                    } else {
+                        $boolRecheio = true;
+                    }
+
+                    if ( empty($_POST["proteina"]) ) {
+                        $boolProteina = false;
+                    } else {
+                        $boolProteina = true;
+                    }
+
+                    if ( empty($_POST["queijo"]) ) {
+                        $boolQueijo = false;
+                    } else {
+                        $boolQueijo = true;
+                    }
+
+                    if(isset($_POST['catupiry']) || isset($_POST['cheddar_cremoso']) || isset($_POST['cream_cheese']) || isset($_POST['pate_peru']) || isset($_POST['bacom']) || isset($_POST['salame']) || isset($_POST['dobro_queijo']) || isset($_POST['dobro_proteina'])){
+                        $boolComplemento = true;
+                    }else{
+                        $boolComplemento = false;
+                    }
+
+                    if($boolTamanho && $boolPao && $boolRecheio && $boolProteina && $boolQueijo === true){
+                        switch($_POST["tamanho"]){
+                            case 'pequeno':{
+                                $preco += 6.99;
+                                break;
+                            }
+                            case'medio':{
+                                $preco += 10.99;
+                                break;
+                            }
+                            case 'grande':{
+                                $preco += 14.99;
+                                break;
+                            }
+                            case'colossal':{
+                                $preco += 18.99;
+                                break;
+                            }
+                        }
+
+                        
+
+                        if($boolComplemento == false){
+                            echo "<div style='display: flex; margin: auto;'>
+                                    <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>
+                                        Voce não escolheu um complemento.
+                                    </h5>    
+                                </div>";
+                        }
+
+                        echo "<div style='display: flex; margin: auto;'>
+                                <h5 id='falta' style='margin-left: 40%; margin-right: auto;'><br>
+                                    confira seu pedido : R$", $preco, "<br>
+                                    tamanho: ", $tamanho ,"<br>
+                                    Pão: ", $pao ,"<br>
+                                    recheio: ", $recheio, "<br>
+                                    proteina: ", $proteina, "<br>
+                                    queijo: ", $queijo, "<br>
+                                </h5>    
+                              </div>";
+                    }else{
+                        echo "<br><br> <div style='display: flex; margin: auto;'> <h5 id='falta' style='margin-left: auto; margin-right: auto;'> Parece que seu pedido esta incompleto, Faltou escolher";
+                        if ( $boolTamanho == false ) {
+                            echo " o tamanho";
+                        }
+                        if ( $boolPao == false ) {
+                            echo " o pão";
+                        }
+                        if ( $boolRecheio == false ) {
+                            echo " o recheio";
+                        }
+                        if ( $boolProteina == false ) {
+                            echo " a proteina";
+                        }
+                        if ( $boolQueijo == false ) {
+                            echo " o queijo";
+                        }
+                            
+                        echo " do lanche.</h5>";    
+                    }
                 ?>
             </div>
         </body>
