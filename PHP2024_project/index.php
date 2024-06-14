@@ -69,7 +69,7 @@
                 function entrar(){
                     nome = document.form.user.value;
                     window.alert("Bem Vindo(a) " + nome);
-                    window.location.href = "http://localhost/php2024_project/php2024_project/main.php";
+                    window.location.href = "http://localhost/php2024_project-main/php2024_project/main.php";
                 }
             </script>
         </body>
